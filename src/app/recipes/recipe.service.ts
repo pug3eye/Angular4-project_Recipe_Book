@@ -1,18 +1,18 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
 import { Recipe } from './recipe.model';
-import { Ingredient } from './../shared/ingredient.model';
-import { ShoppingListService } from './../shopping-list/shopping-list.service';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-    recipeSelected = new EventEmitter<Recipe>();
+  recipeSelected = new EventEmitter<Recipe>();
 
-    private recipes: Recipe[] = [
+  private recipes: Recipe[] = [
     new Recipe(
         'กระเพราไก่ไข่ดาว', 
         'เมนูง่ายๆแต่ความอร่อยที่ได้ระดับภัตตาคาร!!', 
-        'https://cdn.pixabay.com/photo/2015/08/26/10/58/the-pork-fried-rice-made-908333_960_720.jpg',
+        'https://i.ytimg.com/vi/PzXlMG-32SQ/maxresdefault.jpg',
         [
             new Ingredient('กระเพรา', 1),
             new Ingredient('ไข่ไก่', 20),
@@ -30,15 +30,13 @@ export class RecipeService {
         ])
     ];
 
-    constructor(private slService: ShoppingListService) {
-
-    }
-
-  getRecipes() {
-      return this.recipes.slice();
-  }
-
-  addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.slService.addIngredients(ingredients);
-  }
+    constructor(private slService: ShoppingListService) {}
+    
+      getRecipes() {
+        return this.recipes.slice();
+      }
+    
+      addIngredientsToShoppingList(ingredients: Ingredient[]) {
+        this.slService.addIngredients(ingredients);
+      }
 }
