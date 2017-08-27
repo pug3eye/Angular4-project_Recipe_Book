@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
+<<<<<<< HEAD
 import { ActivatedRoute, Params, Router } from '@angular/router';
+=======
+>>>>>>> dd81d8a4f722694ce5f6318e1c5be190ea53925f
 
 @Component({
   selector: 'app-recipe-detail',
