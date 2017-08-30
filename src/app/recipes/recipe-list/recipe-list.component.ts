@@ -20,11 +20,8 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
   }
-<<<<<<< HEAD
 
   onNewRecipe() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
-=======
->>>>>>> dd81d8a4f722694ce5f6318e1c5be190ea53925f
 }
