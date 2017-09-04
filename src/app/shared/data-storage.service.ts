@@ -14,7 +14,9 @@ export class DataStorageService {
   }
 
   storeRecipes() {
-    return this.http.put('https://pug-recipebook.firebaseio.com/recipes.json', this.recipeService.getRecipes());
+    const token = this.authService.getToken();  // new to use getIdToken
+
+    return this.http.put('https://pug-recipebook.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipes());
   }
 
   getRecipes() {
